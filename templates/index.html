@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if list_view == True %}
+    <h1 style="text-align:center;">{{title}}</h1>
+{% endif %}
+<div class="blogs">
+{% if blog|length == 0 %}
+    <p>No posts yet. <a href="/newpost">Write one!</a></p>
+
+{% else %}
+    {% for post in blog %}
+        {% if list_view == True %}
+            <h2><a href="blog?id={{post.id}}">{{post.title}}</a></h2>
+        {% else %}    
+            <h1 style="text-align:center;">{{post.title}}</h1>
+        {% endif %}
+        <p>{{post.content}}</p>
+    {% endfor %}
+{% endif %}
+</div>
+{% endblock %}

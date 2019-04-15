@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .error { 
+            color: red; 
+        }
+        .blog-heading {
+            display: inline;
+            padding-right: 40px;
+        }
+    </style>
+    <title>{{title}}</title>
+</head>
+<body>
+<div id="navigation">
+    <ul>
+        <li class="blog-heading"><a href="/blog">Main Blog Page</a></li>
+        <li class="blog-heading"><a href="/newpost">Add a Blog Entry</a></li>
+    </ul>
+</div>
+<div>
+    {% block content %}
+    {% endblock %}
+</div>
+
+</body>
+</html>
